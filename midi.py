@@ -1,6 +1,7 @@
 """
 midi.py
 created by Aiden McCormack on 11-03-2022
+Copyright 2022, Aiden McCormack, All rights reserved.
 
 This file initializes the midi file that gets written to output, and defines some procedures
 for generating chords & scales as well as some housekeeping procedures to make this thing work.
