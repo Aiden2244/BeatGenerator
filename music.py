@@ -21,7 +21,8 @@ key_id = {
     8: 'Ab',
     9: 'A',
     10: 'Bb',
-    11: 'B'
+    11: 'B',
+    12: 'C'
 }
 
 # relates an index to a string representation of the mode

@@ -26,8 +26,12 @@ for i in range(7):
 
 # print some info about the track, since it is randomly generated
 def info():
+    print()
+    print("====== BEAT INFO ======")
     print("Key = " + KEYNAME + " " + MODENAME)
     print("Tempo = " + str(TEMPO))
+    prog_to_string()
+    print()
 
 
 # makes the syntax for writing the file out a little nicer, useful if I ever
@@ -35,6 +39,7 @@ def info():
 def write(filename="output.mid"):
     with open(filename, 'wb') as outf:
         midi.writeFile(outf)
+    print("Wrote midi to file " + filename)
 
 
 # code that outputs a scale. It was the first thing I wrote, and I might remove it since it's buggy.
@@ -43,6 +48,25 @@ def output_scale(scale, beat=0):
         pitch = ROOT + scale[i]
         midi.addNote(1, 0, pitch, i+beat, 1, 100)
     print("output: " + str(scale))
+
+
+# converts the tuple representation of a chord into a string representation
+def chord_to_string(chord):
+    note = chord[0]
+    while note > MIDDLE_C+OCTAVE:
+        note = note - OCTAVE
+    note = note - MIDDLE_C
+    note_id = key_id[note]
+    variety = chord[1][0]
+    output = note_id + " " + variety
+    print(output + ", ", end="")
+
+
+# uses the above method to output the beat's chord progression
+def prog_to_string(p=progression):
+    print("Chord progression: ", end="")
+    for i in range(len(progression)):
+        chord_to_string(progression[i])
 
 
 # adds a chords to the file
@@ -132,6 +156,7 @@ def generate_progression(length=4, mode='all', force_unique=True, force_root=Tru
         else:
             generate_triads_by_scale(mode=mode)
     prev_index = 0
+    print("Generating progression of " + str(length) + " chords")
     for i in range(length):
         index = randint(0, (len(chords))-1)
         if (i == 0) and force_root:
