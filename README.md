@@ -1,6 +1,10 @@
 # BeatGenerator
 A program that algorithmically generates a 7-track beat based on a pre-determined template and pseudorandom variables
 
+If you just want to actually know how to use this application, skip over the following block.
+
+====================================================================================================================================================
+
 I started this project in my junior year of undergraduate studies. I wrote this for a class called "Music and Appropriation," where I became
 concerned with the question of musical authenticity. The gist is that a work of art cannot be considered an "appropriation" unless there exists
 a previous work which is considered to be "authentic." My goal with this project was to investigate what it actually means for art---and music
@@ -14,3 +18,9 @@ progressions or melodies used (technically speaking the built-in pseudorandom py
 
 Philosophical discourse aside, this is my first non-trivial application that I have designed and implemented from scratch. I learned a lot in making
 this program, and if nothing else I hope to use the knowledge in future programming endeavors.
+
+====================================================================================================================================================
+
+This app is still in the early stages of its life. Currently, it only generates chord progressions based on a random key. To use it in its current state, you need to have a program on your computer that can play midi files. This program generates a file called "output.mid" by default, which is the file you need to play in order to hear the results of the program. 
+
+© Copyright 2022, Aiden McCormack, All rights reserved. 
